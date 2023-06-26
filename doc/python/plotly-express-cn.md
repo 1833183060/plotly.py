@@ -1,3 +1,4 @@
+plotly-express.md 的笔记，并非翻译
 ---
 jupyter:
   jupytext:
@@ -34,13 +35,13 @@ jupyter:
     thumbnail: thumbnail/plotly-express.png
 ---
 
-### Overview
+### 概述
 
-The `plotly.express` module (usually imported as `px`) contains functions that can create entire figures at once, and is referred to as Plotly Express or PX. Plotly Express is a built-in part of the `plotly` library, and is the recommended starting point for creating most common figures. Every Plotly Express function uses [graph objects](/python/graph-objects/) internally and returns a `plotly.graph_objects.Figure` instance. Throughout the `plotly` documentation, you will find the Plotly Express way of building figures at the top of any applicable page, followed by a section on how to use graph objects to build similar figures. Any figure created in a single function call with Plotly Express could be created using graph objects alone, but with between 5 and 100 times more code.
+`plotly.express` 模块 (usually imported as `px`) 包含那些可以一次创建整个图形的函数, 被称为 Plotly Express 或 PX. Plotly Express  `plotly` 库的内置部分, 是创建一般图形的推荐的起点. 每一个 Plotly Express 函数内部使用[graph objects](/python/graph-objects/) 并返回一个 `plotly.graph_objects.Figure` 实例. 在整个 `plotly` 文档中, 你都会在相应页面顶部发现用express创建图形的方法,同时跟随用graph 对象构建相似图形的方法. 使用Plotly Express在单个函数调用中创建的任何图形都可以单独使用graph对象创建，但代码要多5到100倍.
 
-Plotly Express provides [more than 30 functions for creating different types of figures](https://plotly.com/python-api-reference/plotly.express.html). The API for these functions was carefully designed to be as consistent and easy to learn as possible, making it easy to switch from a scatter plot to a bar chart to a histogram to a sunburst chart throughout a data exploration session. *Scroll down for a gallery of Plotly Express plots, each made in a single function call.*
+Plotly Express 提供了 [超过30个函数，用于创建不同类型的图形](https://plotly.com/python-api-reference/plotly.express.html). 这些函数的api被设计的尽可能一致和易于学习,使得在数据挖掘的过程中可以很容易的从散点图切换到条形图，切换到直方图，切换到旭日图. *向下滚动查看Plotly Express图库，每个图都是用单个函数调用中生成的.*
 
-Here is a talk from the [SciPy 2021 conference](https://www.scipy2021.scipy.org/) that gives a good introduction to Plotly Express and [Dash](https://dash.plotly.com/):
+这里有个演讲 [SciPy 2021 conference](https://www.scipy2021.scipy.org/) 它很好地介绍了Plotly Express 和 [Dash](https://dash.plotly.com/):
 
 ```python hide_code=true
 %%html
@@ -52,7 +53,7 @@ frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media
 </div>
 ```
 
-Plotly Express currently includes the following functions:
+Plotly Express目前包括以下功能:
 
 * **Basics**: [`scatter`](/python/line-and-scatter/), [`line`](/python/line-charts/), [`area`](/python/filled-area-plots/), [`bar`](/python/bar-charts/), [`funnel`](/python/funnel-charts/), [`timeline`](https://plotly.com/python/gantt/)
 * **Part-of-Whole**: [`pie`](/python/pie-charts/), [`sunburst`](/python/sunburst-charts/), [`treemap`](/python/treemaps/), [`icicle`](/python/icicle-charts/), [`funnel_area`](/python/funnel-charts/)
@@ -66,11 +67,11 @@ Plotly Express currently includes the following functions:
 * **Polar Charts**: [`scatter_polar`](/python/polar-chart/), [`line_polar`](/python/polar-chart/), [`bar_polar`](/python/wind-rose-charts/)
 * **Ternary Charts**: [`scatter_ternary`](/python/ternary-plots/), [`line_ternary`](/python/ternary-plots/)
 
-### High-Level Features
+### 高级特性
 
-The Plotly Express API in general offers the following features:
+Plotly Express API通常提供以下特性:
 
-* **A single entry point into `plotly`**: just `import plotly.express as px` and get access to [all the plotting functions](https://plotly.com/python-api-reference/plotly.express.html), plus [built-in demo datasets under `px.data`](https://plotly.com/python-api-reference/generated/plotly.data.html#module-plotly.data) and [built-in color scales and sequences under `px.color`](https://plotly.com/python-api-reference/generated/plotly.colors.html#module-plotly.colors). Every PX function returns a `plotly.graph_objects.Figure` object, so you can edit it using all the same methods like [`update_layout` and `add_trace`](https://plotly.com/python/creating-and-updating-figures/#updating-figures).
+* **进入 `plotly`的单一入口**: just `import plotly.express as px` and get access to [all the plotting functions](https://plotly.com/python-api-reference/plotly.express.html), plus [built-in demo datasets under `px.data`](https://plotly.com/python-api-reference/generated/plotly.data.html#module-plotly.data) and [built-in color scales and sequences under `px.color`](https://plotly.com/python-api-reference/generated/plotly.colors.html#module-plotly.colors). Every PX function returns a `plotly.graph_objects.Figure` object, so you can edit it using all the same methods like [`update_layout` and `add_trace`](https://plotly.com/python/creating-and-updating-figures/#updating-figures).
 * **Sensible, Overridable Defaults**: PX functions will infer sensible defaults wherever possible, and will always let you override them.
 * **Flexible Input Formats**: PX functions [accept input in a variety of formats](/python/px-arguments/), from `list`s and `dict`s to [long-form or wide-form Pandas `DataFrame`s](/python/wide-form/) to [`numpy` arrays and `xarrays`](/python/imshow/) to [GeoPandas `GeoDataFrames`](/python/maps/).
 * **Automatic Trace and Layout configuration**: PX functions will create one [trace](/python/figure-structure) per animation frame for each unique combination of data values mapped to discrete color, symbol, line-dash, facet-row and/or facet-column. Traces' [`legendgroup` and `showlegend` attributes](https://plotly.com/python/legend/) are set such that only one legend item appears per unique combination of discrete color, symbol and/or line-dash. Traces are automatically linked to a correctly-configured [subplot of the appropriate type](/python/figure-structure).
