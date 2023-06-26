@@ -1,4 +1,3 @@
-plotly-express.md 的笔记，并非翻译
 ---
 jupyter:
   jupytext:
@@ -34,6 +33,10 @@ jupyter:
     permalink: python/plotly-express/
     thumbnail: thumbnail/plotly-express.png
 ---
+
+
+注：plotly-express.md 的笔记，并非翻译
+
 
 ### 概述
 
