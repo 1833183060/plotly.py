@@ -44,7 +44,7 @@ jupyter:
 
 Plotly Express 提供了 [超过30个函数，用于创建不同类型的图形](https://plotly.com/python-api-reference/plotly.express.html). 这些函数的api被设计的尽可能一致和易于学习,使得在数据挖掘的过程中可以很容易的从散点图切换到条形图，切换到直方图，切换到旭日图. *向下滚动查看Plotly Express图库，每个图都是用单个函数调用中生成的.*
 
-这里有个演讲 [SciPy 2021 conference](https://www.scipy2021.scipy.org/) 它很好地介绍了Plotly Express 和 [Dash](https://dash.plotly.com/):
+这里有个演讲 [SciPy 2021 conference](https://www.scipy2021.scipy.org/) ，它很好地介绍了Plotly Express 和 [Dash](https://dash.plotly.com/):
 
 ```python hide_code=true
 %%html
@@ -74,9 +74,9 @@ Plotly Express目前包括以下功能:
 
 Plotly Express API通常提供以下特性:
 
-* **进入 `plotly`的单一入口**: just `import plotly.express as px` and get access to [all the plotting functions](https://plotly.com/python-api-reference/plotly.express.html), plus [built-in demo datasets under `px.data`](https://plotly.com/python-api-reference/generated/plotly.data.html#module-plotly.data) and [built-in color scales and sequences under `px.color`](https://plotly.com/python-api-reference/generated/plotly.colors.html#module-plotly.colors). Every PX function returns a `plotly.graph_objects.Figure` object, so you can edit it using all the same methods like [`update_layout` and `add_trace`](https://plotly.com/python/creating-and-updating-figures/#updating-figures).
-* **Sensible, Overridable Defaults**: PX functions will infer sensible defaults wherever possible, and will always let you override them.
-* **Flexible Input Formats**: PX functions [accept input in a variety of formats](/python/px-arguments/), from `list`s and `dict`s to [long-form or wide-form Pandas `DataFrame`s](/python/wide-form/) to [`numpy` arrays and `xarrays`](/python/imshow/) to [GeoPandas `GeoDataFrames`](/python/maps/).
+* **进入 `plotly`的单一入口**: 只用 `import plotly.express as px` 访问 [所有绘图功能](https://plotly.com/python-api-reference/plotly.express.html), 另加 [`px.data`下的内置演示数据集](https://plotly.com/python-api-reference/generated/plotly.data.html#module-plotly.data) 和 [`px.color`下的内置色阶和颜色序列](https://plotly.com/python-api-reference/generated/plotly.colors.html#module-plotly.colors). 每一个 PX 函数都返回一个`plotly.graph_objects.Figure` 对象, 所以你可以用完全相同的方法（比如[`update_layout` 和 `add_trace`](https://plotly.com/python/creating-and-updating-figures/#updating-figures)）编辑它.
+* **合理，可覆盖的默认值**: PX 函数尽可能推断合理的默认值, 并且总是允许你覆盖他们.
+* **灵活的输入格式**: PX 函数 [接受各种各样的输入](/python/px-arguments/), 从 `list`s 和 `dict`s 到[长型或宽型的 Pandas `DataFrame`s](/python/wide-form/)，到 [`numpy` 数组和 `xarrays`](/python/imshow/)，到 [GeoPandas `GeoDataFrames`](/python/maps/).
 * **Automatic Trace and Layout configuration**: PX functions will create one [trace](/python/figure-structure) per animation frame for each unique combination of data values mapped to discrete color, symbol, line-dash, facet-row and/or facet-column. Traces' [`legendgroup` and `showlegend` attributes](https://plotly.com/python/legend/) are set such that only one legend item appears per unique combination of discrete color, symbol and/or line-dash. Traces are automatically linked to a correctly-configured [subplot of the appropriate type](/python/figure-structure).
 * **Automatic Figure Labelling**: PX functions [label axes, legends and colorbars](https://plotly.com/python/figure-labels/) based in the input `DataFrame` or `xarray`, and provide [extra control with the `labels` argument](/python/styling-plotly-express/).
 * **Automatic Hover Labels**: PX functions populate the hover-label using the labels mentioned above, and provide [extra control with the `hover_name` and `hover_data` arguments](/python/hover-text-and-formatting/).
